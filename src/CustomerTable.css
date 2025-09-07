@@ -1,0 +1,159 @@
+/* CustomerTable main container */
+.ct {
+  display: flex;
+  width: var(--table-width);
+  height: var(--table-height);
+  padding: var(--table-padding);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--table-content-gap);
+  flex-shrink: 0;
+
+  border-radius: var(--table-border-radius);
+  background: var(--White);
+
+  /* margin-bottom: 5px; */
+
+  box-sizing: border-box;
+  /* justify-content: start;
+  position: relative; */
+}
+
+.ct-ordered {
+  background: var(--Blue);
+  color: var(--White);
+}
+
+.ct-short {
+  height: var(--table-height-short);
+}
+
+/* .ct-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+} */
+
+.ct-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.ct-header-not-ordered {
+  justify-content: center;
+}
+
+.ct-number {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--Med-Gray);
+  white-space: nowrap;
+}
+.ct-number-ordered {
+  color: var(--White);
+}
+
+.ct-users {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ct-user-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.ct-user-count {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--White);
+}
+
+.ct-menu-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.ct-menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.ct-menu-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ct-menu-col:last-child {
+  justify-content: flex-end;
+}
+.ct-menu-name {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--White);
+}
+.ct-menu-count {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--White);
+  margin-right: 5px;
+}
+.ct-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--Blue);
+  border: 1px solid var(--Light-Gray);
+  overflow: hidden;
+}
+.ct-checkbox-checked {
+  background: var(--White);
+  border: 1px solid var(--White);
+}
+.ct-checkbox-checked img {
+  width: 100%;
+  height: 100%;
+}
+
+.ct-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.ct-total {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--White);
+}
+.ct-clear-btn {
+  width: 100%;
+  padding: 5px 0;
+  background: rgba(251,251,251,0.3);
+  border: none;
+  border-radius: 5px;
+  color: var(--White);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* Responsive and additional tweaks as needed */

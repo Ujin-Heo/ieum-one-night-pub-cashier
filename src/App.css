@@ -1,0 +1,39 @@
+/* Main background */
+.main-bg {
+  background: #e4e4e4;
+  width: 1728px;
+  height: 1708px;
+  margin-left: 80px;
+  position: relative;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.table-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter, .kitchen, .screen1, .screen2 {
+  position: absolute;
+  background: #5c5c5c;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.counter {
+  left: 752px; top: 763px; width: 210px; height: 305px; padding: 118px 44px;
+  font-size: 24px;
+}
+.kitchen {
+  left: 88px; top: 763px; width: 648px; height: 305px; padding: 127px 269px;
+  font-size: 24px;
+}
+.screen1 {
+  left: 895px; top: 21px; width: 293px; padding: 5px 69px; border-radius: 5px; font-size: 18px;
+}
+.screen2 {
+  left: 992px; top: 1098px; width: 422px; height: 50px; padding: 5px 69px; border-radius: 5px; font-size: 18px;
+}
+

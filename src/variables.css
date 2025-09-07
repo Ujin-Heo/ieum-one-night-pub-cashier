@@ -1,0 +1,24 @@
+:root {
+    --order-board-width: 750px;
+    --order-board-height: 380px;
+    --order-board-row-height: 45px;
+
+    --table-width: 196px;
+    --table-height: 200px;
+    --table-height-short: 160px;
+
+    --table-margin: 5px;
+    --table-padding: 10px;
+    --table-content-gap: 10px;
+    --table-border-radius: 5px;
+
+    --table-group-gap: 30px;
+    
+    --White: #FBFBFB;
+    --Light-Gray: #E4E4E4;
+    --Med-Gray: #C0C0C0;
+    --Gray: #5C5C5C;
+    --Black: #2C2C2C;
+    --Blue: #2372EB;
+    
+}
