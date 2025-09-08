@@ -1,0 +1,271 @@
+{
+    "tables": [
+        {
+            "dummy": "tableNum으로 바로 인덱싱할 수 있게 앞에 넣은 더미 데이터"
+        },
+        {
+            "tableNum": 1,
+            "customerNum": 3,
+            "ordered": true,
+            "menus": [
+                {
+                    "menuName": "치킨 가라아게",
+                    "quantity": 1,
+                    "served": false
+                },
+                {
+                    "menuName": "순두부찌개",
+                    "quantity": 2,
+                    "served": true
+                }
+            ],
+            "totalPrice": 52000
+        },
+        {
+            "tableNum": 2,
+            "customerNum": 3,
+            "ordered": true,
+            "menus": [
+                {
+                    "menuName": "치킨 가라아게",
+                    "quantity": 1,
+                    "served": false
+                },
+                {
+                    "menuName": "순두부찌개",
+                    "quantity": 2,
+                    "served": true
+                }
+            ],
+            "totalPrice": 52000
+        },
+        {
+            "tableNum": 3,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 4,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 5,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 6,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 7,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 8,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 9,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 10,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 11,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 12,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 13,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 14,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 15,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 16,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 17,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 18,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 19,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 20,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 21,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 22,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 23,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 24,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 25,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 26,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 27,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 28,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 29,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 30,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 31,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 32,
+            "customerNum": 0,
+            "ordered": false,
+            "menus": [],
+            "totalPrice": 0
+        },
+        {
+            "tableNum": 33,
+            "customerNum": 3,
+            "ordered": true,
+            "menus": [
+                {
+                    "menuName": "치킨 가라아게",
+                    "quantity": 1,
+                    "served": false
+                },
+                {
+                    "menuName": "순두부찌개",
+                    "quantity": 2,
+                    "served": true
+                }
+            ],
+            "totalPrice": 52000
+        }
+    ]
+}

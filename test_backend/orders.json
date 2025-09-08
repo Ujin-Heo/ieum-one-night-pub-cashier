@@ -1,0 +1,36 @@
+{
+    "orders": [
+        {
+            "menuName": "치킨 가라아게",
+            "menuOrders": [
+                {
+                    "orderId": 1,
+                    "tableNum": 3
+                },
+                {
+                    "orderId": 2,
+                    "tableNum": 4
+                },
+                {
+                    "orderId": 3,
+                    "tableNum": 3
+                }
+            ],
+            "totalOrders": 3
+        },
+        {
+            "menuName": "순두부찌개",
+            "menuOrders": [
+                {
+                    "orderId": 4,
+                    "tableNum": 3
+                },
+                {
+                    "orderId": 5,
+                    "tableNum": 4
+                },
+            ],
+            "totalOrders": 2
+        }
+    ]
+}

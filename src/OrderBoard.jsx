@@ -1,29 +1,107 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import "./OrderBoard.css"
+import "./Modal.css"
 
-function OrderBoard({ orders: ordersProp }) {
+function OrderBoard({ orders: ordersProp, updateCallback }) {
 
     const [orders, setOrders] = useState(ordersProp);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedOrder, setSelectedOrder] = useState(null);
+    const [selectedMenuName, setSelectedMenuName] = useState(null);
+
+    useEffect(() => {
+        setOrders(ordersProp);
+    }, [ordersProp]);
+
+    const handleDeleteClick = (menuOrder, menuName) => {
+        setSelectedOrder(menuOrder);
+        setSelectedMenuName(menuName);
+        setShowModal(true);
+    };
+
+    const confirmDelete = async () => {
+        try {
+            // send delete request to backend
+            // 해당 order의 served를 true로 만들어주세여
+            await fetch(`${import.meta.env.VITE_API_BASE_URL}/delete_order`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    orderId: selectedOrder.orderId
+                }),
+            });
+
+            // update local state (remove selected menuOrder by orderId)
+            setOrders((prevOrders) =>
+                prevOrders
+                    .map((order) => ({
+                        ...order,
+                        menuOrders: order.menuOrders.filter(
+                            (menuOrder) => menuOrder.orderId !== selectedOrder.orderId
+                        ),
+                    }))
+                    .filter((order) => order.menuOrders.length > 0) // 🔑 remove empty rows
+            );
+        } catch (error) {
+            console.error("삭제 실패:", error);
+        } finally {
+            setShowModal(false);
+            setSelectedOrder(null);
+
+            updateCallback();
+        }
+    };
+
+    const cancelDelete = () => {
+        setShowModal(false);
+        setSelectedOrder(null);
+        setSelectedMenuName(null);
+    };
 
     return (
-        <table className="order-board-container">
-            <tr className="order-board-row order-board-header">
-                <th className="order-board-col">메뉴이름</th>
-                <th className="order-board-col">총 수량</th>
-                <th className="order-board-col">테이블 번호</th>
-            </tr>
-            {orders.map((order) => {
-                <tr className="order-board-row">
-                    <td className="order-board-col">{order.menuName}</td>
-                    <td className="order-board-col">{order.totalOrders}</td>
-                    <td className="order-board-col table-icons">
-                        {order.orders.map((tableNum) => {
-                            <i className="table-icon">{tableNum}</i>
-                        })}
-                    </td>
-                </tr>
-            })}
-        </table>
+        <>
+            <table className="order-board-container">
+                <thead>
+                    <tr className="order-board-row order-board-header">
+                        <th className="order-board-col">메뉴이름</th>
+                        <th className="order-board-col">총 수량</th>
+                        <th className="order-board-col">테이블 번호</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders?.map((order) => (
+                        <tr key={order.menuName} className="order-board-row">
+                            <td className="order-board-col">{order.menuName}</td>
+                            <td className="order-board-col">{order.totalOrders}</td>
+                            <td className="order-board-col table-icons">
+                                {order.menuOrders.map((menuOrder) => (
+                                    <button
+                                        key={menuOrder.orderId}
+                                        className="table-icon"
+                                        onClick={() => handleDeleteClick(menuOrder, order.menuName)}
+                                    >
+                                        {menuOrder.tableNum}
+                                    </button>
+                                ))}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            {showModal && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <p className="modal-title">
+                            {selectedOrder.tableNum}번 테이블에 [{selectedMenuName}]의 서빙이 되었습니까?
+                        </p>
+                        <div className="modal-button-container">
+                            <button className="modal-button" onClick={cancelDelete}>아니오</button>
+                            <button className="modal-button modal-button-blue" onClick={confirmDelete} >네</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
     )
 }
 
