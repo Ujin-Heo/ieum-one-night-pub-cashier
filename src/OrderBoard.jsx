@@ -1,6 +1,9 @@
+import { useState, useEffect } from "react";
 import "./OrderBoard.css"
 
-function OrderBoard() {
+function OrderBoard({ orders: ordersProp }) {
+
+    const [orders, setOrders] = useState(ordersProp);
 
     return (
         <table className="order-board-container">
@@ -9,26 +12,17 @@ function OrderBoard() {
                 <th className="order-board-col">총 수량</th>
                 <th className="order-board-col">테이블 번호</th>
             </tr>
-
-            <tr className="order-board-row">
-                <td className="order-board-col">치킨 가라아게</td>
-                <td className="order-board-col">3</td>
-                <td className="order-board-col table-icons">
-                    <i className="table-icon">3</i>
-                    <i className="table-icon">4</i>
-                    <i className="table-icon">3</i>
-                </td>
-            </tr>
-
-            <tr className="order-board-row">
-                <td className="order-board-col">순두부찌개</td>
-                <td className="order-board-col">2</td>
-                <td  className="order-board-col table-icons">
-                    <i className="table-icon">4</i>
-                    <i className="table-icon">3</i>
-                </td>
-            </tr>
-
+            {orders.map((order) => {
+                <tr className="order-board-row">
+                    <td className="order-board-col">{order.menuName}</td>
+                    <td className="order-board-col">{order.totalOrders}</td>
+                    <td className="order-board-col table-icons">
+                        {order.orders.map((tableNum) => {
+                            <i className="table-icon">{tableNum}</i>
+                        })}
+                    </td>
+                </tr>
+            })}
         </table>
     )
 }
