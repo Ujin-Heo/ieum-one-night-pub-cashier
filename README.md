@@ -35,27 +35,32 @@ React + Vite
 
 -   http method: POST
 -   손님이 입장하면 일행이 몇 명인지, 합석 할 건지 물어 본 후 테이블에 추가함. 그러면 아래와 같은 json 형태로 DB에 데이터 보냄.
-    '''jsonc
-    {
+
+```json
+{
     "tableNum": "(정수)",
     "ordered": "(boolean: 빈 테이블인지 아닌지를 전달함 -> 빈 테이블이면 false, 손님이 온 테이블이면 true)",
     "customerNum": "(정수 -> 손님 수)",
-    "mergeSeat": "(bool -> 합석 할 의향 있으면 true)
-    }
-    '''
+    "mergeSeat": "(bool -> 합석 할 의향 있으면 true)"
+}
+```
+
 -   CustomerTable\_\_SetInfo.jsx의 handleInfoConfirm 함수 참고
 
 6. /get_merge_seat_lists
 
 -   http method: GET
 -   "합석 이력" 버튼 눌렀을 때 합석 성공/거절 테이블 목록 불러올 때 사용
+-   다른 데이터랑 연결될 필요 없음. 얘네만 따로 놀음.
 -   아래 json 형태로 보내주면 됨
-    '''json
+
+```json
     {
     "successTableList": [1,2,3,...],
     "failTableList": [4,5,6,...]
     }
-    '''
+```
+
 -   Tooltip.jsx의 fetchTableLists 함수 참고
 
 7. /edit_merge_seat_lists
@@ -63,10 +68,12 @@ React + Vite
 -   http method: POST
 -   성공/거절 테이블 목록이 업데이트되면 DB로 전송함
 -   아래 json 형태로 전송함. /get_merge_seat_lists에서의 형식과 동일함.
-    '''json
-    {
-    "successTableList": [1,2,3,...],
-    "failTableList": [4,5,6,...]
-    }
-    '''
+
+```json
+{
+"successTableList": [1,2,3,...],
+"failTableList": [4,5,6,...]
+}
+```
+
 -   Tooltip.jsx의 handleTableListChange 함수 참고
