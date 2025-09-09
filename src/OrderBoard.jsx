@@ -21,16 +21,6 @@ function OrderBoard({ orders: ordersProp, updateCallback }) {
 
     const confirmDelete = async () => {
         try {
-            // send delete request to backend
-            // 해당 order의 served를 true로 만들어주세여
-            await fetch(`${import.meta.env.VITE_API_BASE_URL}/delete_order`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    orderId: selectedOrder.orderId
-                }),
-            });
-
             // update local state (remove selected menuOrder by orderId)
             setOrders((prevOrders) =>
                 prevOrders
@@ -42,6 +32,17 @@ function OrderBoard({ orders: ordersProp, updateCallback }) {
                     }))
                     .filter((order) => order.menuOrders.length > 0) // 🔑 remove empty rows
             );
+
+            // send delete request to backend
+            // 해당 order의 served를 true로 만들어주세여
+            await fetch(`${import.meta.env.VITE_API_BASE_URL}/delete_order`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    orderId: selectedOrder.orderId
+                }),
+            });
+
         } catch (error) {
             console.error("삭제 실패:", error);
         } finally {

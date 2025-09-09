@@ -162,7 +162,7 @@ function Tooltip({ show, onClose, parentRef }) {
                         </div>
                         <div className="status-content">
                             <ul class="status-list">
-                                {successTableList.map((tableNum) => (
+                                {successTableList?.map((tableNum) => (
                                     <li key={tableNum} class="status-item status-item-success" onClick={() => handleRemoveTable(tableNum)}>테이블 {tableNum}</li>
                                 ))}
                             </ul>
@@ -198,7 +198,7 @@ function Tooltip({ show, onClose, parentRef }) {
                         </div>
                         <div className="status-content">
                             <ul class="status-list">
-                                {failTableList.map((tableNum) => (
+                                {failTableList?.map((tableNum) => (
                                     <li class="status-item status-item-fail">테이블 {tableNum}</li>
                                 ))}
                             </ul>

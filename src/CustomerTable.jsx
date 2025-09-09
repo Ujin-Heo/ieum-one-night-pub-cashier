@@ -42,6 +42,11 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
 
     const confirmDelete = async () => {
         try {
+            // update local state
+            setCustomerNum(0);
+            setMergeSeat(false);
+            setOrdered(false);
+
             // send delete request to backend
             // 해당 tableNum의 table을 DB에서 지워주세요
             await fetch(`${import.meta.env.VITE_API_BASE_URL}/delete_table`, {
@@ -51,11 +56,6 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
                     tableNum: tableNum
                 }),
             });
-
-            // update local state
-            setCustomerNum(0);
-            setMergeSeat(false);
-            setOrdered(false);
 
         } catch (error) {
             console.error("삭제 실패:", error);
@@ -98,7 +98,7 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
                 </div>
 
                 <ul className="ct-menu-list">
-                    {menus.map((menu) => (
+                    {menus?.map((menu) => (
                         <li key={menu.menuName} className="ct-menu-row">
                             <div className="ct-menu-col">
                                 <span className="ct-menu-name">{menu.menuName}</span>
