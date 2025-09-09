@@ -28,7 +28,6 @@ function App() {
 
   const fetchTables = async () => {
     try {
-      console.log("fetch tables!!!");
       const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL}/get_tables` // 백엔드로부터 테이블별 주문 현황 정보를 가져옴
       );
@@ -48,7 +47,6 @@ function App() {
 
   const fetchOrders = async () => {
     try {
-      console.log("fetch orders!!!");
       const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL}/get_orders` // 백엔드로부터 메뉴별 주문 현황 정보를 가져옴
       );

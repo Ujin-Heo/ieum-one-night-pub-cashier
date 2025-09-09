@@ -23,6 +23,8 @@ function CustomerTable__SetInfo({ isShort, tableNum, updateCallback, mergeSeat: 
             let ordered = false;
             if (customerNum > 0 || mergeSeat) ordered = true;
 
+            updateCallback(customerNum, mergeSeat, ordered);
+
             // 입력 또는 수정된 테이블 정보를 DB에 저장함 (손님 수 정보, 합석 여부 정보 전달)
             await fetch(`${import.meta.env.VITE_API_BASE_URL}/set_table_info`, {
                 method: "POST",
@@ -35,7 +37,6 @@ function CustomerTable__SetInfo({ isShort, tableNum, updateCallback, mergeSeat: 
                 }),
             });
 
-            updateCallback(customerNum, mergeSeat, ordered);
         } catch (error) {
             console.error("테이블 정보 수정 실패:", error);
         } finally {
