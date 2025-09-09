@@ -199,7 +199,7 @@ function Tooltip({ show, onClose, parentRef }) {
                         <div className="status-content">
                             <ul class="status-list">
                                 {failTableList.map((tableNum) => (
-                                    <li class="status-item status-item-success">테이블 {tableNum}</li>
+                                    <li class="status-item status-item-fail">테이블 {tableNum}</li>
                                 ))}
                             </ul>
                             <form class="status-actions" onSubmit={handleFailSubmit}>
