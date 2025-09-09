@@ -1,0 +1,96 @@
+.ct-set-info {
+    border-radius: 5px;
+    border: 3px solid var(--Blue, #2372EB);
+    background: var(--White, #FBFBFB);
+}
+
+.ct-number-setinfo {
+    color: var(--Blue, #2372EB);
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.ct-customer-num-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.ct-customer-num-input {
+    width: 38px;
+    height: 38px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background: rgba(35, 114, 235, 0.20);
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 24px */
+
+    text-align: center;
+}
+
+.ct-customer-num-input::-webkit-outer-spin-button,
+.ct-customer-num-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ct-customer-num-capacity {
+    color: var(--Blue, #2372EB);
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.ct-merge-seat-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+.ct-merge-seat-text {
+    color: var(--Blue, #2372EB);
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.ct-checkbox-setinfo {
+    border: 1.5px solid var(--Blue, #2372EB);
+}
+
+.ct-checkbox-setinfo-checked {
+    background: var(--Blue, #2372EB);
+}
+
+.ct-customer-num-insert-btn {
+    display: flex;
+    width: 175px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 5px;
+    background: var(--Blue, #2372EB);
+
+    color: var(--White, #FBFBFB);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+}

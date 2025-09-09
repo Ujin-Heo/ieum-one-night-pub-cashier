@@ -11,10 +11,20 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
+    // call immediately on mount
     fetchTables();
     fetchOrders();
-    console.log("useEffect!!!!!");
+
+    // then repeat every 10s
+    const interval = setInterval(() => {
+      fetchTables();
+      fetchOrders();
+    }, 10000);
+
+    // cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
+
 
   const fetchTables = async () => {
     try {
