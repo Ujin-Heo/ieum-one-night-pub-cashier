@@ -11,7 +11,7 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
     const [ordered, setOrdered] = useState(orderedProp);
     const [menus, setMenus] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [mergeSeat, setMergeSeat] = useState(false);
+    const [mergeSeat, setMergeSeat] = useState(tableInfo?.mergeSeat);
 
     const [showModal, setShowModal] = useState(false);
     const [showSetInfo, setShowSetInfo] = useState(false);
@@ -31,6 +31,7 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
         setOrdered(tableInfo?.ordered);
         setMenus(tableInfo?.menus);
         setTotalPrice(tableInfo?.totalPrice);
+        setMergeSeat(tableInfo?.mergeSeat);
     }, [tableInfo]);
 
     const getTableData = (customerNum, mergeSeat, ordered) => {
