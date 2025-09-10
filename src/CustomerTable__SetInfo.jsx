@@ -9,7 +9,7 @@ function CustomerTable__SetInfo({ isShort, tableNum, updateCallback, mergeSeat: 
 
     const element = <p>{tableNum}</p>;
     const checkImg = <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
-        <path d="M11.8337 1.5L4.50033 8.83333L1.16699 5.5" stroke="#FBFBFB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11.8337 1.5L4.50033 8.83333L1.16699 5.5" stroke="#FBFBFB" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
     useEffect(() => {
