@@ -6,7 +6,7 @@ function TopTableSection({ tables, updateCallback: updateCallbackProp }) {
     return (
         <div className="topTableSection">
             <div className="table-group">
-                <CustomerTable tableInfo={tables[1]} tableNum={1} ordered={true} updateCallback={updateCallbackProp} />
+                <CustomerTable tableInfo={tables[1]} tableNum={1} updateCallback={updateCallbackProp} />
             </div>
             <div className="table-group">
                 <CustomerTable tableInfo={tables[2]} tableNum={2} updateCallback={updateCallbackProp} />
@@ -28,7 +28,7 @@ function TopTableSection({ tables, updateCallback: updateCallbackProp }) {
             </div>
             <div className="table-group">
                 <CustomerTable tableInfo={tables[10]} tableNum={10} isShort={true} updateCallback={updateCallbackProp} />
-                <CustomerTable tableInfo={tables[11]} tableNum={11} isShort={true} ordered={true} updateCallback={updateCallbackProp} />
+                <CustomerTable tableInfo={tables[11]} tableNum={11} isShort={true} updateCallback={updateCallbackProp} />
                 <CustomerTable tableInfo={tables[12]} tableNum={12} isShort={true} updateCallback={updateCallbackProp} />
                 <CustomerTable tableInfo={tables[13]} tableNum={13} isShort={true} updateCallback={updateCallbackProp} />
             </div>
