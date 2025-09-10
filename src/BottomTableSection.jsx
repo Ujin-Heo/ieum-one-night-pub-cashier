@@ -7,7 +7,7 @@ function BottomTableSection({ tables, updateCallback: updateCallbackProp }) {
         <div className="BottomTableSection">
             <div className="table-group-horizontal">
                 <CustomerTable tableInfo={tables[28]} tableNum={28} updateCallback={updateCallbackProp} />
-                <CustomerTable tableInfo={tables[26]} tableNum={26} updateCallback={updateCallbackProp} />
+                <CustomerTable tableInfo={tables[999]} tableNum={999} updateCallback={updateCallbackProp} />
             </div>
             <div className="table-group-horizontal">
                 <CustomerTable tableInfo={tables[18]} tableNum={18} updateCallback={updateCallbackProp} />
@@ -19,7 +19,7 @@ function BottomTableSection({ tables, updateCallback: updateCallbackProp }) {
             </div>
             <div className="table-group-horizontal">
                 <CustomerTable tableInfo={tables[27]} tableNum={27} isShort={true} updateCallback={updateCallbackProp} />
-                <CustomerTable tableInfo={tables[999]} tableNum={999} updateCallback={updateCallbackProp} />
+                <CustomerTable tableInfo={tables[26]} tableNum={26} updateCallback={updateCallbackProp} />
             </div>
         </div>
     )
