@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./OrderBoard.css"
 import "./Modal.css"
 
@@ -8,6 +8,25 @@ function OrderBoard({ orders: ordersProp, updateCallback }) {
     const [showModal, setShowModal] = useState(false);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [selectedMenuName, setSelectedMenuName] = useState(null);
+
+    const [moneyChecked, setMoneyChecked] = useState({});
+    const isFirstRender = useRef(true);
+
+    useEffect(() => {
+        const saved = localStorage.getItem("moneyChecked");
+        if (saved) {
+            setMoneyChecked(JSON.parse(saved));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return; // 🚫 skip saving on first render
+        }
+        localStorage.setItem("moneyChecked", JSON.stringify(moneyChecked));
+    }, [moneyChecked]);
+
 
     useEffect(() => {
         setOrders(ordersProp);
@@ -75,15 +94,27 @@ function OrderBoard({ orders: ordersProp, updateCallback }) {
                             <td className="order-board-col">{order.menuName}</td>
                             <td className="order-board-col">{order.totalOrders}</td>
                             <td className="order-board-col table-icons">
-                                {order.menuOrders.map((menuOrder) => (
-                                    <button
-                                        key={menuOrder.orderId}
-                                        className="table-icon"
-                                        onClick={() => handleDeleteClick(menuOrder, order.menuName)}
-                                    >
-                                        {menuOrder.tableNum}
-                                    </button>
-                                ))}
+                                {order.menuOrders.map((menuOrder) => {
+                                    const isChecked = moneyChecked[menuOrder.orderId] || false;
+                                    return (
+                                        <button
+                                            key={menuOrder.orderId}
+                                            className="table-icon"
+                                            style={{
+                                                backgroundColor: isChecked ? "blue" : "var(--Black)"
+                                            }}
+                                            onDoubleClick={() => handleDeleteClick(menuOrder, order.menuName)}
+                                            onClick={() =>
+                                                setMoneyChecked((prev) => ({
+                                                    ...prev,
+                                                    [menuOrder.orderId]: !prev[menuOrder.orderId]
+                                                }))
+                                            }
+                                        >
+                                            {menuOrder.tableNum}
+                                        </button>
+                                    );
+                                })}
                             </td>
                         </tr>
                     ))}
