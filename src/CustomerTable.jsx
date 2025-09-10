@@ -21,7 +21,7 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
 
     const element = <p>{tableNum}</p>;
     const checkImg = <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
-        <path d="M11.8337 1.5L4.50033 8.83333L1.16699 5.5" stroke={mergeSeat ? "#A40732" : "#2372EB"} stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11.8337 1.5L4.50033 8.83333L1.16699 5.5" stroke={mergeSeat ? "#A40732" : "#2372EB"} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 
     const closeTooltip = () => setShowTooltip(false);
@@ -143,7 +143,7 @@ function CustomerTable({ tableInfo, tableNum, ordered: orderedProp = false, isSh
                     </div>
                 )
             }
-            <Tooltip show={showTooltip} onClose={closeTooltip} parentRef={parentRef} />
+            <Tooltip show={showTooltip} onClose={closeTooltip} parentRef={parentRef} tableNum={tableNum} />
         </div >
     );
 }

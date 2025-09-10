@@ -12,6 +12,31 @@
   border-radius: 10px;
   border: 2px solid var(--Black);
   background: var(--White);
+  overflow: hidden; /* keeps scrollbar inside */
+}
+
+.order-board-container thead {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-board-container tbody {
+  /* flex: 1 1 auto;   /* take remaining space */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(var(--order-board-height) - var(--order-board-row-height));
+  overflow-y: auto; /* scrolls if content exceeds container */
+}
+
+.order-board-container tbody::-webkit-scrollbar {
+  width: 6px;
+}
+.order-board-container tbody::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
 }
 
 .order-board-container thead, .order-board-container tbody {
@@ -26,8 +51,8 @@
   display: flex;
   align-items: center;
   /* gap: 100px; */
-  flex-shrink: 0;
-  align-self: stretch;
+  /* flex-shrink: 0;
+  align-self: stretch; */
   box-sizing: border-box;
 
   height: var(--order-board-row-height);
