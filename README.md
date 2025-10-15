@@ -3,7 +3,7 @@
 - 배포 링크: https://ieum-one-night-pub-cashier.onrender.com/
 - Tech Stack: React + Vite
 
-## <백엔드에 다음의 4가지 endpoint가 필요함>
+## <백엔드에 다음의 7가지 endpoint가 필요함>
 
 ### 1. /get_tables
 
